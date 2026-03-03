@@ -1,0 +1,62 @@
+@use "global" as *;
+
+.message {
+  margin-top: rem(90);
+  padding-block: rem(70) rem(45);
+  background-color: #f2f2f2;
+
+  @include mq('md') {
+    margin-top: rem(150);
+    padding-block: rem(140) rem(150);
+  }
+}
+
+.message__content {
+  margin-top: rem(35);
+
+  @include mq('md') {
+    margin-top: rem(80);
+  }
+}
+
+.message__text-wrap {
+  max-width: 500px;
+  margin-inline: auto;
+
+  @include mq('md') {
+    max-width: rem(998);
+  }
+}
+
+.message__text {
+  font-feature-settings: "palt";
+  line-height: 1.8;
+  font-size: rem(12);
+  font-weight: var(--font-weight-normal);
+
+  &:not(:first-of-type) {
+    margin-top: rem(16);
+  }
+
+  @include mq('md') {
+    line-height: 2.1;
+    font-size: rem(14);
+
+    &:not(:first-of-type) {
+      margin-top: rem(24);
+    }
+  }
+}
+
+.message__name {
+  font-size: rem(12);
+  font-weight: var(--font-weight-normal);
+  margin-top: rem(32);
+  text-align: right;
+
+  @include mq('md') {
+    font-size: rem(14);
+    margin-top: rem(48);
+  }
+}
+

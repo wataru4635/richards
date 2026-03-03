@@ -1,0 +1,239 @@
+@use "global" as *;
+.contact {
+padding-block: rem(70) rem(40);
+background-color: var(--accent-color03);
+@include mq('md') {
+padding-block: rem(150);
+}
+}
+
+.contact__form-wrap {
+  margin-top: rem(40);
+  @include mq('md') {
+  margin-top: rem(80);
+  padding: rem(110) rem(90) rem(90) rem(90);
+  background-color: #fff;
+  }
+}
+
+.contact__form-text {
+  font-size: rem(12);
+  font-weight: var(--font-weight-normal);
+  margin-bottom: rem(30);
+  font-feature-settings: "palt";
+  @media (max-width: 767px) {
+  color: #fff;
+  }
+  @include mq('md') {
+  font-size: rem(14);
+  margin-bottom: rem(60);
+  text-align: center;
+  letter-spacing: .02em;
+  }
+}
+
+.contact__form-thanks {
+  text-align: center;
+  letter-spacing: .02em;
+  font-weight: var(--font-weight-normal);
+  font-size: rem(14);
+  margin-top: rem(14);
+  font-feature-settings: "palt";
+  @media (max-width: 767px) {
+  color: #fff;
+  }
+  @include mq('md') {
+  margin-top: rem(30);
+  }
+}
+
+/* ===============================================
+# form.scss
+=============================================== */
+
+.form__wrap {
+
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: rem(130) auto;
+    align-items: center;
+  }
+}
+
+.form__wrap.form__wrap--textarea {
+  @include mq(md) {
+    align-items: flex-start;
+  }
+}
+
+.form__wrap+.form__wrap {
+  margin-top: rem(16);
+}
+
+.form__label {
+  font-size: rem(12);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+@media (max-width: 767px) {
+  color: #fff;
+}
+  @include mq(md) {
+    font-size: rem(14);
+  }
+}
+
+.form__wrap.form__wrap--textarea .form__label span {
+  font-weight: 500;
+  line-height: 2;
+  font-size: rem(10);
+
+  @include mq(md) {
+    display: block;
+    font-size: rem(12);
+    padding-top: rem(16);
+    line-height: 1.5;
+  }
+}
+
+.form__wrap.form__wrap--address .form__label::after {
+  content: none;
+}
+
+.form__label::after {
+  content: "*";
+  font-size: rem(14);
+  color: #FF0000;
+  padding-left: rem(3);
+}
+
+.form__input,
+.form__textarea {
+  margin-top: rem(10);
+  width: 100%;
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+  & span {
+    display: block;
+  }
+}
+
+.form__submit {
+  margin-top: rem(40);
+  text-align: center;
+
+  @include mq('md') {
+    margin-top: rem(80);
+  }
+  & .wpcf7-spinner {
+    display: none;
+  }
+}
+
+.form__wrap.form__wrap--textarea {
+  margin-top: rem(40);
+}
+
+.wpcf7-response-output {
+  width: fit-content;
+  margin-inline: auto !important;
+}
+
+/* ===============================================
+# form-input.scss
+=============================================== */
+
+.form-input input {
+  padding: rem(11) rem(15);
+  width: 100%;
+  font-size: rem(10);
+  line-height: 1;
+  border-radius: 0;
+  border: 1px solid #ccc;
+  appearance: none;
+  background-color: #fff;
+  background-image: none;
+
+  @include mq('md') {
+    padding: rem(10) rem(15);
+    font-size: rem(14);
+    background-color: #e6e6e6;
+    border: none;
+  }
+}
+
+.form-input input:focus {
+  box-shadow: none;
+  outline: none;
+  @media (max-width: 767px) {
+    border: 1px solid #ccc;
+  }
+}
+
+/* ===============================================
+# form-textarea.scss
+=============================================== */
+
+.form-textarea textarea {
+  padding: rem(8) rem(15);
+  width: 100%;
+  height: rem(180);
+  font-size: rem(10);
+  border-radius: 0;
+  border: 1px solid #ccc;
+  appearance: none;
+  background-color: #fff;
+  background-image: none;
+
+  @include mq('md') {
+    height: rem(200);
+    font-size: rem(14);
+    background-color: #e6e6e6;
+    border: none;
+  }
+}
+
+.form-textarea textarea:focus {
+  box-shadow: none;
+  outline: none;
+  @media (max-width: 767px) {
+    border: 1px solid #ccc;
+  }
+}
+
+/* ===============================================
+# form-submit.scss
+=============================================== */
+
+.form-submit input {
+  color: #fff;
+  font-weight: 700;
+  background-color: #000;
+  padding: rem(20) rem(120);
+  letter-spacing: .04em;
+  font-size: rem(14);
+  transition: color .3s , background-color .3s;
+  border-radius: 10px;
+
+  @include mq('md') {
+    padding: rem(25) rem(140);
+    border: 2px solid #000;
+    font-size: rem(15);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: #000;
+      background-color: #fff;
+    }
+  }
+}
+
+.wpcf7-not-valid-tip {
+  font-size: rem(10);
+
+  @include mq('md') {
+    font-size: rem(14);
+  }
+}

@@ -1,0 +1,44 @@
+@use "global" as *;
+.section-title {
+  text-align: center;
+}
+
+.section-title-jp {
+  font-size: rem(30);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .04em;
+  @include mq('md') {
+  font-size: rem(57);
+  }
+}
+
+.section-title-en {
+  font-size: rem(24);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-family: $second-font-family;
+  font-weight: var(--font-weight-bold);
+
+  @include mq('md') {
+  font-size: rem(43);
+  }
+}
+
+.section-title--small {
+  & .section-title-en {
+    @include mq('md') {
+      font-size: rem(32);
+    }
+  }
+  & .section-title-jp { 
+    @include mq('md') {
+      font-size: rem(50);
+    }
+  }
+}
+.section-title--white .section-title-en {
+  color: #fff;
+}
+.section-title--white .section-title-jp {
+  color: #fff;
+}
